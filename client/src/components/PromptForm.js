@@ -6,15 +6,17 @@ export default function PromptForm({ requestImage }) {
   const submitForm = (e) => {
     e.preventDefault();
     const prompt = promptRef.current.value;
-    if (prompt.trim().length === 0) {
-      return;
-    }
-    console.log(prompt);
     requestImage(prompt);
   };
 
   return (
     <form className='promptForm'>
+      <h2>Image Generator</h2>
+      <p>
+        Describe your imagination in prompt and AI will generate an image for
+        you.
+      </p>
+      <small>example: a dog riding a rocket in space</small>
       <input
         ref={promptRef}
         className='promptInput'

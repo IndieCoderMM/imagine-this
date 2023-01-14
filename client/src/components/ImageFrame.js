@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Spinner from './Spinner';
+import PainterImg from '../painterImage.png';
 
-function ImageFrame({ imgUrl, imgCaption }) {
+function ImageFrame({ imgUrl, status }) {
   return (
     <div className='imageFrame'>
-      {imgUrl ? <img src={imgUrl} className='resultImg' /> : null}
-      <p className='imgCaption'>{imgCaption || 'Generate your imagination!'}</p>
+      {status === 'loading' && <Spinner />}
+      {status === 'error' && (
+        <div className='error-box'>
+          <h2>🙁ops!</h2>
+          <p>Image could not be generated!</p>
+        </div>
+      )}
+      {status === 'ready' && (
+        <img src={imgUrl} alt='Generated image' className='picture' />
+      )}
+      {status === 'initial' && (
+        <img
+          className='picture'
+          src={PainterImg}
+          alt='Image by pikisuperstar on Freepik'
+        />
+      )}
     </div>
   );
 }

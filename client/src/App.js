@@ -5,9 +5,15 @@ import ImageFrame from './components/ImageFrame';
 
 function App() {
   const [imgUrl, setImgUrl] = useState();
+  const [status, setStatus] = useState('initial');
 
   const requestImage = async (prompt) => {
+    if (prompt.trim().length === 0) {
+      setStatus('initial');
+      return;
+    }
     try {
+      setStatus('loading');
       const response = await fetch('/openai/imagine', {
         method: 'POST',
         headers: {
@@ -21,7 +27,9 @@ function App() {
       const data = await response.json();
       console.log(data);
       setImgUrl(data.data);
+      setStatus('ready');
     } catch (error) {
+      setStatus('error');
       console.log(error);
     }
   };
@@ -29,8 +37,16 @@ function App() {
   return (
     <div className='app'>
       <PageHeader />
-      <PromptForm requestImage={requestImage} />
-      <ImageFrame imgUrl={imgUrl} />
+      <div className='container'>
+        <PromptForm requestImage={requestImage} />
+        <ImageFrame imgUrl={imgUrl} status={status} />
+      </div>
+      <footer>
+        <p>
+          2023 &copy; imaginethis.ai.com powered by{' '}
+          <a href='https://beta.openai.com/docs/guides/images'>OpenAI API</a>
+        </p>
+      </footer>
     </div>
   );
 }
