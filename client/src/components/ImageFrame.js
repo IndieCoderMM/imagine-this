@@ -13,13 +13,13 @@ function ImageFrame({ imgUrl, status }) {
         </div>
       )}
       {status === 'ready' && (
-        <img src={imgUrl} alt='Generated image' className='picture' />
+        <img src={imgUrl} alt='generated from prompt' className='picture' />
       )}
       {status === 'initial' && (
         <img
           className='picture'
           src={PainterImg}
-          alt='Image by pikisuperstar on Freepik'
+          alt='design by pikisuperstar on Freepik'
         />
       )}
     </div>
