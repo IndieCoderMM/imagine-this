@@ -3,6 +3,8 @@ import PageHeader from './components/PageHeader';
 import PromptForm from './components/PromptForm';
 import ImageFrame from './components/ImageFrame';
 
+const API_URL = 'https://imagine-this.vercel.app/openai/imagine';
+
 function App() {
   const [imgUrl, setImgUrl] = useState();
   const [status, setStatus] = useState('initial');
@@ -14,16 +16,13 @@ function App() {
     }
     try {
       setStatus('loading');
-      const response = await fetch(
-        'https://imagine-this.vercel.app/openai/imagine',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ prompt }),
-        }
-      );
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
       if (!response.ok) {
         throw new Error('Image could not be generated!');
       }
