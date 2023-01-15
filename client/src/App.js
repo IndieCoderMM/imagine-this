@@ -14,13 +14,16 @@ function App() {
     }
     try {
       setStatus('loading');
-      const response = await fetch('/openai/imagine', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ prompt }),
-      });
+      const response = await fetch(
+        'https://imagine-this.vercel.app/openai/imagine',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt }),
+        }
+      );
       if (!response.ok) {
         throw new Error('Image could not be generated!');
       }
