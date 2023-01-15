@@ -1,148 +1,173 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  min-height: 100vh;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
-    background-color:indigo;
-    color:white;
-    padding: .25rem;
-    width: 100%;
-    margin-bottom: 1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: indigo;
+  color: white;
+  padding: 0.25rem 1rem;
+  width: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 2rem;
 }
 
 .container {
-    display: flex;
-    width: 80%;
-    max-width: 900px;
-    min-height: 80vh;
-    background-color: white;
-    margin: .5rem;
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  min-height: 400px;
+  background-color: white;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2),
+    2px 2px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .promptForm {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem;
-    width: 40%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: 40%;
 }
 
 .promptInput {
-    width: 100%;
-    padding: .5rem 1rem;
-    margin: 1rem;
-    border: solid 1px #272727;
-    border-radius: 25rem;
-    font-size: 1rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border: solid 1px #272727;
+  border-radius: 25rem;
+  font-size: 1rem;
 }
 
 .promptInput:focus {
-    outline: none;
+  outline: none;
 }
 
 .generateBtn {
-    background-color:slateblue;
-    width: 100%;
-    border: none;
-    border-radius: 25rem;
-    color: white;
-    padding: .5rem;
-    font-size: 1.2rem;
-    transition: all .3s;
+  background-color: slateblue;
+  width: 100%;
+  border: none;
+  border-radius: 25rem;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  transition: all 0.3s;
 }
 
 .generateBtn:hover {
-    background-color: mediumslateblue;
-    box-shadow: 3px 5px 10px rgba(204, 204, 204, 0.517);
-    transform: translateY(-2px);
+  background-color: mediumslateblue;
+  box-shadow: 3px 5px 10px rgba(204, 204, 204, 0.517);
+  transform: translateY(-2px);
 }
 
-
 .imageFrame {
-    width: 50%;
-    padding: .5rem;
-    background-color: blueviolet;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  padding: 0.5rem;
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .error-box {
-    text-align: center;
-    font-size: 2rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
 footer {
-    padding: 2rem;
-    text-align: center;
-    color: white;
-    
+  padding: 2rem;
+  text-align: center;
+  color: white;
 }
 
- /* Spinner  */
- .lds-ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+/* Spinner  */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+  100% {
+    transform: rotate(360deg);
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+}
 
+@media (max-width: 768px) {
+  body {
+    background: white;
+  }
 
+  footer {
+    color: black;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: none;
+    box-shadow: none;
+  }
+
+  .promptForm,
+  .imageFrame {
+    width: 80%;
+    height: auto;
+  }
+}

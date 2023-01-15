@@ -28,7 +28,6 @@ function App() {
         throw new Error('Image could not be generated!');
       }
       const data = await response.json();
-      console.log(data);
       setImgUrl(data.data);
       setStatus('ready');
     } catch (error) {
