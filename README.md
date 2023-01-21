@@ -24,14 +24,15 @@
 - Instant image generation
 
 ## 🚀 Live Demo
-Try out the live version on [imaginethis.ai](https://indiecodermm.github.io/imagine-this)
+Try out the live version on [ImagineThis Website](https://indiecodermm.github.io/imagine-this)
 
 ## ⚙ Getting Started
 To run this app on your local machine, follow these steps:
 
-1. Clone this repository into your desired folder.
+1. Clone this repository into your desired project folder.
 ```sh
-git clone git@github.com:IndieCoderMM/imagine-this.git
+cd my-project
+git clone git@github.com:IndieCoderMM/imagine-this.git .
 ```
 2. Install dependencies in `client/` and `server/` directories.
 ```sh
@@ -50,6 +51,7 @@ npm run dev
 5. Inside `client/src/App.js`, set `API_URL` to `"/openai/imagine"`.
 6. Start the application.
 ```sh
+cd client
 npm start
 ```
 
@@ -60,7 +62,7 @@ I am always looking for ways to improve my project. If you have any suggestions 
 [![Github](https://img.shields.io/badge/GitHub-673AB7?style=for-the-badge&logo=github&logoColor=white)](https://github.com/IndieCoderMM)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/hthant_oo)
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/hthantoo)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](hthant00chk@gmail.com)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hthant00chk@gmail.com)
 
 ## 🤝 Contributing
 
