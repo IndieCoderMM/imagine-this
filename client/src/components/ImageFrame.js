@@ -4,24 +4,24 @@ import PainterImg from '../painterImage.png';
 
 function ImageFrame({ imgUrl, status }) {
   return (
-    <div className='imageFrame'>
-      {status === 'loading' && <Spinner />}
-      {status === 'error' && (
-        <div className='error-box'>
+    <div className="imageFrame">
+      {status === 'loading' ? <Spinner /> : null}
+      {status === 'error' ? (
+        <div className="error-box">
           <h2>🙁ops!</h2>
           <p>Image could not be generated!</p>
         </div>
-      )}
-      {status === 'ready' && (
-        <img src={imgUrl} alt='generated from prompt' className='picture' />
-      )}
-      {status === 'initial' && (
+      ) : null}
+      {status === 'ready' ? (
+        <img src={imgUrl} alt="generated from prompt" className="picture" />
+      ) : null}
+      {status === 'initial' ? (
         <img
-          className='picture'
+          className="picture"
           src={PainterImg}
-          alt='design by pikisuperstar on Freepik'
+          alt="design by pikisuperstar on Freepik"
         />
-      )}
+      ) : null}
     </div>
   );
 }

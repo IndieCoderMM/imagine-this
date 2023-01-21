@@ -36,17 +36,15 @@ function App() {
   };
 
   return (
-    <div className='app'>
+    <div className="app">
       <PageHeader />
-      <div className='container'>
+      <div className="container">
         <PromptForm requestImage={requestImage} />
         <ImageFrame imgUrl={imgUrl} status={status} />
       </div>
       <footer>
-        <p>
-          2023 &copy; imaginethis.ai.com powered by{' '}
-          <a href='https://beta.openai.com/docs/guides/images'>OpenAI API</a>
-        </p>
+        <p>Copyright 2023 &copy; imaginethis.ai.com.mm</p>
+        <p>Created using React & OpenAI API</p>
       </footer>
     </div>
   );

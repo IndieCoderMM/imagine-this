@@ -10,22 +10,20 @@ export default function PromptForm({ requestImage }) {
   };
 
   return (
-    <form className='promptForm'>
-      <h2>Image Generator</h2>
+    <form className="promptForm">
+      <h2>A.I. Image Generator</h2>
       <p>
-        Describe your imagination in prompt and AI will generate an image for
-        you.
+        Describe your imagination in prompt and AI will draw an image for you.
       </p>
       <small>example: a dog riding a rocket in space</small>
       <input
         ref={promptRef}
-        className='promptInput'
-        type='text'
-        placeholder='Write prompt for image'
+        className="promptInput"
+        type="text"
+        placeholder="Write prompt for image"
         maxLength={100}
-        required
       />
-      <button className='generateBtn' type='submit' onClick={submitForm}>
+      <button className="generateBtn" type="submit" onClick={submitForm}>
         Generate
       </button>
     </form>
