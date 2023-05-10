@@ -36,23 +36,24 @@ git clone git@github.com:IndieCoderMM/imagine-this.git .
 ```
 2. Install dependencies in `client/` and `server/` directories.
 ```sh
-npm i --prefix client
-npm i --prefix server
+cd client && npm install
+cd ../server && npm install
 ```
 3. Create `.env` file inside `server/` folder and add your [OpenAI_API_KEY](https://beta.openai.com/account/api-keys).
 ```sh
 OPENAI_API_KEY="sk-adfjeofoefkn........"
 ```
+> Please keep in mind that the OpenAI API key may have some issues if you are using the free plan.
+> I faced some issues with my API key and am currently working on resolving them. I will update the app as soon as I have a solution.
+
 4. Run the development server.
 ```sh
-cd server
-npm run dev
+cd server && npm run dev
 ```
 5. Inside `client/src/App.js`, set `API_URL` to `"/openai/imagine"`.
 6. Start the application.
 ```sh
-cd client
-npm start
+cd client && npm start
 ```
 
 ## 📧 Contact

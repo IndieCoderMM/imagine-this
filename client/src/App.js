@@ -3,7 +3,7 @@ import PageHeader from './components/PageHeader';
 import PromptForm from './components/PromptForm';
 import ImageFrame from './components/ImageFrame';
 
-const API_URL = 'https://imagine-this.vercel.app/openai/imagine';
+const API_URL = 'https://imaginethis-server.onrender.com/openai/imagine';
 
 function App() {
   const [imgUrl, setImgUrl] = useState();
@@ -32,6 +32,7 @@ function App() {
     } catch (error) {
       setStatus('error');
       console.log(error);
+      console.log('Sorry! Free OpenAI Key is not working anymore.');
     }
   };
 
@@ -43,6 +44,12 @@ function App() {
         <ImageFrame imgUrl={imgUrl} status={status} />
       </div>
       <footer>
+        <p>
+          <strong>Note:</strong>This app cannot generate images at the moment,
+          I'm working on resolving the issue and will update the app as soon as
+          possible.
+        </p>
+        <br />
         <p>Copyright 2023 &copy; imaginethis.ai.com.mm</p>
         <p>Created using React & OpenAI API</p>
       </footer>
